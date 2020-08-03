@@ -21,8 +21,13 @@ async def on_message(message):
     if "hakemus" in message.content.lower():
         if random.randint(0,10) == 8:
             await message.channel.send("hyy-vä")
+            await client.change_presence(activity=discord.Game("hyy-vä"))
         else:
             await message.channel.send("tapan sut")
-
+            await client.change_presence(activity=discord.Game("tapan sut"))
+    elif "pelaako andy final fantasyä" in message.content.lower():
+        await message.channel.send("Pelaa")
+    elif "pakkaako andy" in message.content.lower():
+        await message.channel.send(random.choice(["Joo", "Kyllä", "Ikävä kyllä"]))
 
 client.run(open("env.cfg", "r").read())
