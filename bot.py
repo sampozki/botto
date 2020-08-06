@@ -5,6 +5,8 @@ import discord
 import asyncio
 import random
 
+import simpsonface
+
 client = discord.Client()
 
 
@@ -25,9 +27,15 @@ async def on_message(message):
         else:
             await message.channel.send("tapan sut")
             await client.change_presence(activity=discord.Game("tapan sut"))
+
     elif "pelaako andy final fantasyä" in message.content.lower():
         await message.channel.send("Pelaa")
+
     elif "pakkaako andy" in message.content.lower():
         await message.channel.send(random.choice(["Joo", "Kyllä", "Ikävä kyllä"]))
+
+    elif "sotd" in message.content.lower():
+        await simpsonface.sendface(message)
+
 
 client.run(open("env.cfg", "r").read())
