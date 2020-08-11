@@ -35,7 +35,10 @@ async def on_message(message):
         await message.channel.send(random.choice(["Joo", "Kyllä", "Ikävä kyllä"]))
 
     elif "sotd" in message.content.lower():
-        await simpsonface.sendface(message)
+        await simpsonface.sendface(message, "frinkiac")
+    
+    elif "fotd" in message.content.lower():
+        await simpsonface.sendface(message, "morbotron")
 
 
 client.run(open("env.cfg", "r").read())
