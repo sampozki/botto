@@ -40,7 +40,7 @@ async def on_message(message):
     elif "fotd" in message.content.lower():
         await simpsonface.sendface(message, "morbotron")
         
-     elif "rotd" in message.content.lower():
+    elif "rotd" in message.content.lower():
         await simpsonface.sendface(message, "masterofallscience")
 
 
