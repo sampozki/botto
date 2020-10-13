@@ -1,0 +1,19 @@
+[Unit]
+Description=Le gooddest of bottos
+
+Wants=network.target
+After=syslog.target network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3.8 /home/sampo/Coding/python/botto/bot.py
+KillMode=process
+User=sampo
+WorkingDirectory=/home/sampo/Coding/python/botto/
+Restart=on-failure
+RestartSec=5
+StandardOutput=journal+console
+StandardError=journal+console
+
+[Install]
+WantedBy=multi-user.target
