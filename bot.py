@@ -4,8 +4,12 @@
 import discord
 import asyncio
 import random
+import json
+import urllib3
+import re
 
 import simpsonface
+import cat
 
 client = discord.Client()
 
@@ -19,8 +23,8 @@ async def on_ready():
 async def on_message(message):
     if message.author == client.user:
         return
-    
-    if "hakemus" in message.content.lower():
+
+    elif "hakemus" in message.content.lower():
         if random.randint(0,10) == 8:
             await message.channel.send("hyy-vä")
             await client.change_presence(activity=discord.Game("hyy-vä"))
@@ -30,10 +34,7 @@ async def on_message(message):
 
     elif "pelaako andy final fantasyä" in message.content.lower():
         await message.channel.send("Pelaa")
-
-    elif "pakkaako andy" in message.content.lower():
-        await message.channel.send(random.choice(["Joo", "Kyllä", "Ikävä kyllä"]))
-
+    
     elif "sotd" in message.content.lower():
         await simpsonface.sendface(message, "frinkiac")
     
@@ -42,6 +43,15 @@ async def on_message(message):
         
     elif "rotd" in message.content.lower():
         await simpsonface.sendface(message, "masterofallscience")
+
+    elif "hyvä botti" in message.content.lower():
+        await message.channel.send("Kiitos :3")
+
+    elif "paska botti" in message.content.lower():
+        await message.channel.send("Haista vittu!")
+    
+    elif re.match(r'm+(?:a+|ä+)(?:u+|y+)', message.content.lower()):
+        await mau(message)
 
 
 client.run(open("env.cfg", "r").read())
