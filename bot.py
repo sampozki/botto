@@ -9,7 +9,7 @@ import urllib3
 import re
 
 import simpsonface
-import cat
+import mau
 
 client = discord.Client()
 
@@ -51,7 +51,7 @@ async def on_message(message):
         await message.channel.send("Haista vittu!")
     
     elif re.match(r'm+(?:a+|ä+)(?:u+|y+)', message.content.lower()):
-        await mau(message)
+        await mau.mau(message)
 
 
 client.run(open("env.cfg", "r").read())
