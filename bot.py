@@ -23,6 +23,10 @@ async def on_ready():
 async def on_message(message):
     if message.author == client.user:
         return
+    
+    if "Horny Jail" in str(message.author.roles):
+        await message.channel.send("BONK!")
+        return
 
     elif "hakemus" in message.content.lower():
         if random.randint(0,10) == 8:
@@ -50,8 +54,21 @@ async def on_message(message):
     elif "paska botti" in message.content.lower():
         await message.channel.send("Haista vittu!")
     
-    elif re.match(r'm+(?:a+|ä+)(?:u+|y+)', message.content.lower()):
-        await mau.mau(message)
+    elif re.match(r'.*m+(?:a+|ä+|i+|ö+)(?:u+|y+)2.*', message.content.lower()):
+        await mau.mau2(message)
+        print("maumau   " + str(message.author.id))
 
+    elif re.match(r'.*m+(?:a+|ä+|i+|ö+)(?:u+|y+).*', message.content.lower()):
+        await mau.mau(message)
+        print("maumau   " + str(message.author.id))
+   
+    elif "syawn" in message.content.lower():
+        await message.channel.send("https://sampozki.fi/syawn.png")
+
+    elif "yawn" in message.content.lower():
+        await message.channel.send("https://sampozki.fi/yawn.png")
+    
+    elif "yhteiskun" in message.content.lower():
+        await message.channel.send("https://sampozki.fi/yhteiskunta.png")
 
 client.run(open("env.cfg", "r").read())
