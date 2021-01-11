@@ -14,6 +14,11 @@ import mau
 client = discord.Client()
 
 
+
+async def setstatus(status):
+    await client.change_presence(activity=discord.Game(str(status)))
+
+
 @client.event
 async def on_ready():
     print(f'{client.user} has connected to Discord!')
@@ -56,10 +61,12 @@ async def on_message(message):
     
     elif re.match(r'.*m+(?:a+|ä+|i+|ö+)(?:u+|y+)2.*', message.content.lower()):
         await mau.mau2(message)
+        await setstatus(random.choice(["mau","maumau","määäyyyyy","mäymäymäymäyyy"]))
         print("maumau   " + str(message.author.id))
 
     elif re.match(r'.*m+(?:a+|ä+|i+|ö+)(?:u+|y+).*', message.content.lower()):
         await mau.mau(message)
+        await setstatus(random.choice(["mau","maumau","määäyyyyy","mäymäymäymäyyy"]))
         print("maumau   " + str(message.author.id))
    
     elif "syawn" in message.content.lower():
@@ -70,5 +77,7 @@ async def on_message(message):
     
     elif "yhteiskun" in message.content.lower():
         await message.channel.send("https://sampozki.fi/yhteiskunta.png")
+
+    # await client.change_presence(activity=discord.Game("Hyvää joulua!"))
 
 client.run(open("env.cfg", "r").read())
