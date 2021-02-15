@@ -46,19 +46,19 @@ async def on_message(message):
     
     elif "sotd" in message.content.lower():
         if len(message.content) > 5:
-            await simpsonface.sendtagface(message, "frinkiac", message.content[:5])
+            await simpsonface.sendtagface(message, "frinkiac", message.content[5:])
         else:
             await simpsonface.sendface(message, "frinkiac")
     
     elif "fotd" in message.content.lower():
         if len(message.content) > 5:
-            await simpsonface.sendtagface(message, "morbotron", message.content[:5])
+            await simpsonface.sendtagface(message, "morbotron", message.content[5:])
         else:
             await simpsonface.sendface(message, "morbotron")
         
     elif "rotd" in message.content.lower():
         if len(message.content) > 5:
-            await simpsonface.sendtagface(message, "masterofallscience", message.content[:5])
+            await simpsonface.sendtagface(message, "masterofallscience", message.content[5:])
         else:
             await simpsonface.sendface(message, "masterofallscience")
 
