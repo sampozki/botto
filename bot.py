@@ -53,12 +53,14 @@ async def on_message(message):
     elif "fotd" in message.content.lower():
         if len(message.content) > 5:
             await simpsonface.sendtagface(message, "morbotron", message.content[:5])
-        await simpsonface.sendface(message, "morbotron")
+        else:
+            await simpsonface.sendface(message, "morbotron")
         
     elif "rotd" in message.content.lower():
         if len(message.content) > 5:
             await simpsonface.sendtagface(message, "masterofallscience", message.content[:5])
-        await simpsonface.sendface(message, "masterofallscience")
+        else:
+            await simpsonface.sendface(message, "masterofallscience")
 
     elif "hyvä botti" in message.content.lower():
         await message.channel.send("Kiitos :3")
