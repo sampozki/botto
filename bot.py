@@ -45,12 +45,19 @@ async def on_message(message):
         await message.channel.send("Pelaa")
     
     elif "sotd" in message.content.lower():
-        await simpsonface.sendface(message, "frinkiac")
+        if len(message.content) > 5:
+            await simpsonface.sendtagface(message, "frinkiac", message.content[:5])
+        else:
+            await simpsonface.sendface(message, "frinkiac")
     
     elif "fotd" in message.content.lower():
+        if len(message.content) > 5:
+            await simpsonface.sendtagface(message, "morbotron", message.content[:5])
         await simpsonface.sendface(message, "morbotron")
         
     elif "rotd" in message.content.lower():
+        if len(message.content) > 5:
+            await simpsonface.sendtagface(message, "masterofallscience", message.content[:5])
         await simpsonface.sendface(message, "masterofallscience")
 
     elif "hyvä botti" in message.content.lower():
@@ -59,7 +66,7 @@ async def on_message(message):
     elif "paska botti" in message.content.lower():
         await message.channel.send("Haista vittu!")
     
-    elif re.match(r'.*(?:m+|n+)(?:a+|ä+|i+|ö+)(?:u+|y+|a+)2.*', message.content.lower()):
+    elif re.match(r'.*(?:m+|n+)(?:a+|ä+|i+|ö+)(?:u+|y+|a+).*', message.content.lower()):
         await mau.mau2(message)
         await setstatus(random.choice(["mau","maumau","määäyyyyy","mäymäymäymäyyy"]))
         print("maumau   " + str(message.author.id))
@@ -77,6 +84,10 @@ async def on_message(message):
     
     elif "yhteiskun" in message.content.lower():
         await message.channel.send("https://sampozki.fi/yhteiskunta.png")
+
+    elif "wöö" in message.content.lower():
+        await message.channel.send("https://sampozki.fi/soyjak.jpg")
+
 
     # await client.change_presence(activity=discord.Game("Hyvää joulua!"))
 
