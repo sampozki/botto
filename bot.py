@@ -90,6 +90,8 @@ async def on_message(message):
     elif "wöö" in message.content.lower():
         await message.channel.send("https://sampozki.fi/soyjak.jpg")
 
+    elif "babbit" in message.content.lower():
+        await message.channel.send("https://sampozki.fi/babbit.gif")
 
     # await client.change_presence(activity=discord.Game("Hyvää joulua!"))
 
