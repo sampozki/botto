@@ -5,7 +5,7 @@ import json
 import random
 
 async def sendface(message, urll):
-    
+
     response = urllib3.PoolManager().request( "GET", "https://" + urll + ".com/api/random")
     data = json.loads(response.data.decode("utf-8"))
 
@@ -14,7 +14,7 @@ async def sendface(message, urll):
 
 
 async def sendtagface(message, urll, tag):
-    
+
     response = urllib3.PoolManager().request( "GET", "https://" + urll + ".com/api/search?q=" + tag)
     data = json.loads(response.data.decode("utf-8"))
     maxindex = len(data)
