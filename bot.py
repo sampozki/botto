@@ -44,23 +44,20 @@ async def on_message(message):
     elif "pelaako andy final fantasyä" in message.content.lower():
         await message.channel.send("Pelaa")
     
-    elif "sotd" in message.content.lower():
+    elif re.match(r'.*sotd|rotd|fotd.*', message.content.lower()):
+
+        site = ''
+        if 'sotd' in message.content.lower():
+            site = 'frinkiac'
+        elif 'rotd' in message.content.lower():
+            site = 'morbotron'
+        elif 'fotd' in message.content.lower():
+            site = 'masterofallscience'
+
         if len(message.content) > 5:
-            await simpsonface.sendtagface(message, "frinkiac", message.content[5:])
+            await simpsonface.sendTagFace(message, site, message.content[5:])
         else:
-            await simpsonface.sendface(message, "frinkiac")
-    
-    elif "fotd" in message.content.lower():
-        if len(message.content) > 5:
-            await simpsonface.sendtagface(message, "morbotron", message.content[5:])
-        else:
-            await simpsonface.sendface(message, "morbotron")
-        
-    elif "rotd" in message.content.lower():
-        if len(message.content) > 5:
-            await simpsonface.sendtagface(message, "masterofallscience", message.content[5:])
-        else:
-            await simpsonface.sendface(message, "masterofallscience")
+            await simpsonface.sendFace(message, site)
 
     elif "hyvä botti" in message.content.lower():
         await message.channel.send("Kiitos :3")
@@ -90,7 +87,5 @@ async def on_message(message):
     elif "wöö" in message.content.lower():
         await message.channel.send("https://sampozki.fi/soyjak.jpg")
 
-
-    # await client.change_presence(activity=discord.Game("Hyvää joulua!"))
 
 client.run(open("env.cfg", "r").read())
