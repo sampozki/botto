@@ -90,6 +90,9 @@ async def on_message(message):
     elif "yhteiskun" in message.content.lower():
         await message.channel.send("https://sampozki.fi/yhteiskunta.png")
 
+    elif "swöö" in message.content.lower():
+        await message.channel.send("https://sampozki.fi/swöö.png")
+
     elif "wöö" in message.content.lower():
         await message.channel.send("https://sampozki.fi/soyjak.jpg")
 
