@@ -50,9 +50,9 @@ async def on_message(message):
         site = ''
         if 'sotd' in message.content.lower():
             site = 'frinkiac'
-        elif 'rotd' in message.content.lower():
-            site = 'morbotron'
         elif 'fotd' in message.content.lower():
+            site = 'morbotron'
+        elif 'rotd' in message.content.lower():
             site = 'masterofallscience'
 
         if len(message.content) > 5:
