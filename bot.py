@@ -91,14 +91,14 @@ async def on_message(message):
         await message.channel.send("https://sampozki.fi/yhteiskunta.png")
 
     elif "swöö" in message.content.lower():
-        await message.channel.send("https://sampozki.fi/swöö.png")
+        if "otso" not in str(message.author.roles):
+            await message.channel.send("https://sampozki.fi/swöö.png")
 
     elif "wöö" in message.content.lower():
         if "otso" not in str(message.author.roles):
             await message.channel.send("https://sampozki.fi/soyjak.jpg")
 
     elif "babbit" in message.content.lower():
-        if "otso" not in str(message.author.roles):
-            await message.channel.send("https://sampozki.fi/babbit.gif")
+        await message.channel.send("https://sampozki.fi/babbit.gif")
 
 client.run(open("env.cfg", "r").read())
