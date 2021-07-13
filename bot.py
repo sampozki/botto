@@ -94,9 +94,11 @@ async def on_message(message):
         await message.channel.send("https://sampozki.fi/swöö.png")
 
     elif "wöö" in message.content.lower():
-        await message.channel.send("https://sampozki.fi/soyjak.jpg")
+        if "otso" not in str(message.author.roles):
+            await message.channel.send("https://sampozki.fi/soyjak.jpg")
 
     elif "babbit" in message.content.lower():
-        await message.channel.send("https://sampozki.fi/babbit.gif")
+        if "otso" not in str(message.author.roles):
+            await message.channel.send("https://sampozki.fi/babbit.gif")
 
 client.run(open("env.cfg", "r").read())
