@@ -7,6 +7,7 @@ import random
 import json
 import urllib3
 import re
+import string
 
 import simpsonface
 import mau
@@ -98,5 +99,12 @@ async def on_message(message):
 
     elif "babbit" in message.content.lower():
         await message.channel.send("https://sampozki.fi/babbit.gif")
+
+    elif "huutispic" in message.content.lower():
+        link = "https://prnt.sc/"+random.choice(string.ascii_lowercase)+random.choice(string.ascii_lowercase)
+        for a in range(0,4):
+            link += str(random.randint(0,9))
+        await message.channel.send(link)
+
 
 client.run(open("env.cfg", "r").read())
