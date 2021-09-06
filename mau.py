@@ -23,6 +23,7 @@ async def mau2(message):
     responseUrl = str(data[0]["url"]).replace(" ", "%20")
     if responseUrl == "https://cdn2.thecatapi.com/images/sqb5Hk8Ck.jpg":
         responseUrl = 'Pahan mielen grumpy cat'
+        await message.channel.send(responseUrl)
         await mau2(message)
         return
     await message.channel.send(responseUrl)
