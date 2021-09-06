@@ -21,7 +21,8 @@ async def mau2(message):
     data = json.loads(response.data.decode("utf-8"))
 
     responseUrl = str(data[0]["url"]).replace(" ", "%20")
-    if responseUrl == "https://cdn2.thecatapi.com/images/sqb5Hk8Ck.jpg":
+    if responseUrl in ["https://cdn2.thecatapi.com/images/sqb5Hk8Ck.jpg", 
+                       "https://cdn2.thecatapi.com/images/jtcbdgrIl.jpg"]:
         responseUrl = 'Pahan mielen grumpy cat'
         await message.channel.send(responseUrl)
         await mau2(message)
