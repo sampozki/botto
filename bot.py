@@ -16,6 +16,9 @@ import hau
 client = discord.Client()
 
 
+banList = ["neekeri", "homo"]
+
+
 
 async def setstatus(status):
     await client.change_presence(activity=discord.Game(str(status)))
@@ -34,6 +37,9 @@ async def on_message(message):
     if "Horny Jail" in str(message.author.roles):
         await message.channel.send("BONK!")
         return
+
+    if message.content.lower().split(" ") in banList:
+        await message.channel.send(random.choice(["KUKA HUUS TON?", "KUKA SE OLI?", "KUKA SANO TON ÄSKEN?"]))
 
     elif "hakemus" in message.content.lower():
         if random.randint(0,10) == 8:
