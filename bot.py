@@ -40,6 +40,7 @@ async def on_message(message):
 
     if "neekeri" in message.content.lower():
         await message.channel.send(random.choice(["KUKA HUUS TON?", "KUKA SE OLI?", "KUKA SANO TON ÄSKEN?"]))
+        await message.delete()
         print(message.content.lower().split(" "))
 
     elif "hakemus" in message.content.lower():
