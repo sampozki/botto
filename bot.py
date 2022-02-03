@@ -38,8 +38,9 @@ async def on_message(message):
         await message.channel.send("BONK!")
         return
 
-    if message.content.lower().split(" ") in banList:
+    if "neekeri" in message.content.lower():
         await message.channel.send(random.choice(["KUKA HUUS TON?", "KUKA SE OLI?", "KUKA SANO TON ÄSKEN?"]))
+        print(message.content.lower().split(" "))
 
     elif "hakemus" in message.content.lower():
         if random.randint(0,10) == 8:
