@@ -8,6 +8,7 @@ import json
 import urllib3
 import re
 import string
+import reddit
 
 import simpsonface
 import mau
@@ -18,6 +19,8 @@ client = discord.Client()
 
 banList = ["neekeri", "homo"]
 
+
+reddit = reddit.Reddit()
 
 
 async def setstatus(status):
@@ -43,6 +46,9 @@ async def on_message(message):
         await asyncio.sleep(2)
         await message.delete()
         print(message.content.lower().split(" "))
+
+    elif re.match(r'^!reddit', message.content.lower()):
+        await reddit.messageHandler(message, client)
 
     elif "hakemus" in message.content.lower():
         if random.randint(0,10) == 8:
