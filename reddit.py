@@ -34,11 +34,11 @@ class Reddit():
         postia = []
 
         try:
-            for submission in self.__reddit.subreddit(subreddit).new(limit=16):
+            for submission in self.__reddit.subreddit(subreddit).new(limit=6):
                 posti.append(submission.url)
                 postia.append(submission.title)
 
-            for submission in self.__reddit.subreddit(subreddit).hot(limit=16):
+            for submission in self.__reddit.subreddit(subreddit).hot(limit=6):
                 posti.append(submission.url)
                 postia.append(submission.title)
 
