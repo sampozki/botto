@@ -11,8 +11,6 @@ COPY requirements.txt requirements.txt
 
 RUN pip install -r requirements.txt
 
-COPY *.py env.cfg ./
-
-COPY . .
+COPY *.py ./
 
 CMD ["python3.8", "bot.py"]

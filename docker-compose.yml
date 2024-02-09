@@ -4,3 +4,5 @@ services:
     image: botto:latest
     container_name: botto
     restart: unless-stopped
+  volumets:
+    - env.cfg:/env.cfg
