@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright: sampozki 2020
+# Copyright: sampozki 2020 - 2024
 
 import discord
 import asyncio
@@ -15,7 +15,7 @@ import hau
 
 client = discord.Client()
 
-banList = ["neekeri", "homo"]
+banList = ["neekeri"]
 
 async def setstatus(status):
     await client.change_presence(activity=discord.Game(str(status)))
@@ -48,9 +48,6 @@ async def on_message(message):
         else:
             await message.channel.send("tapan sut")
             await client.change_presence(activity=discord.Game("tapan sut"))
-
-    elif "pelaako andy final fantasyä" in message.content.lower():
-        await message.channel.send("Pelaa")
     
     elif re.match(r'.*sotd|rotd|fotd.*', message.content.lower()):
 
@@ -86,25 +83,11 @@ async def on_message(message):
         await setstatus(random.choice(["hau","hauhau",]))
         print("hauhau   " + str(message.author.id))
 
-    elif "syawn" in message.content.lower():
-        await message.channel.send("https://sampozki.fi/syawn.png")
-
     elif "yawn" in message.content.lower():
         await message.channel.send("https://sampozki.fi/yawn.png")
 
-    elif "yhteiskun" in message.content.lower():
-        await message.channel.send("https://sampozki.fi/yhteiskunta.png")
-
-    elif "swöö" in message.content.lower():
-        if "otso" not in str(message.author.roles):
-            await message.channel.send("https://sampozki.fi/swöö.png")
-
-    elif "wöö" in message.content.lower():
-        if "otso" not in str(message.author.roles):
-            await message.channel.send("https://sampozki.fi/soyjak.jpg")
-
-    elif "babbit" in message.content.lower():
-        await message.channel.send("https://sampozki.fi/babbit.gif")
+    elif "bark" in message.content.lower():
+        await message.channel.send("https://sampozki.fi/barkmanul.gif")
 
     elif "huutispic" in message.content.lower():
         link = "https://prnt.sc/"+random.choice(string.ascii_lowercase)+random.choice(string.ascii_lowercase)
