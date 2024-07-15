@@ -64,6 +64,12 @@ async def on_message(message):
         else:
             await simpsonface.sendFace(message, site)
 
+    elif re.match(r'^motd', message.content.lower()):
+        await message.channel.send("https://www.placemonkeys.com/500?random=1")
+
+    elif re.match(r'smotd', message.content.lower()):
+        await message.channel.send("https://www.placemonkeys.com/500?spooky&random=1")
+
     elif "hyvä botti" in message.content.lower():
         await message.channel.send("Kiitos :3")
 
