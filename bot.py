@@ -17,6 +17,8 @@ client = discord.Client()
 
 banList = ["neekeri"]
 
+garglList = ["gargl", "_gargl_", "GARGL", "GARGLL............", "Gargl 💀", "come on parti lets go gargli"]
+
 async def setstatus(status):
     await client.change_presence(activity=discord.Game(str(status)))
 
@@ -40,6 +42,11 @@ async def on_message(message):
         await asyncio.sleep(2)
         await message.delete()
         print(message.content.lower().split(" "))
+
+    elif "gargl" in message.content.lower():
+        if random.randint(0,50) == 3:
+            await message.channel.send(random.choice(garglList))
+            await client.change_presence(activity=discord.Game("Gargling away"))
 
     elif "hakemus" in message.content.lower():
         if random.randint(0,10) == 8:
