@@ -1,4 +1,4 @@
-FROM python:3.12.9-alpines
+FROM python:3.12.9-alpine
 
 LABEL Maintainer="sampozki"
 
