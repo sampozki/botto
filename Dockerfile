@@ -1,4 +1,4 @@
-FROM python:3.11.11-alpine
+FROM python:3.12.9-alpine
 
 LABEL Maintainer="sampozki"
 
@@ -13,4 +13,4 @@ RUN pip install -r requirements.txt
 
 COPY *.py ./
 
-CMD ["python3.11", "bot.py"]
+CMD ["python3.12", "bot.py"]
