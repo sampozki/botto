@@ -2,7 +2,7 @@ FROM python:3.12.9-alpine
 
 LABEL Maintainer="sampozki"
 
-RUN apk update && apk add gcc libc-dev python3-dev
+RUN apk update && apk add gcc libc-dev musl-dev
 
 WORKDIR .
 
