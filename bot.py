@@ -105,7 +105,7 @@ async def on_message(message):
             link += str(random.randint(0,9))
         await message.channel.send(link)
 
-    elif re.match(r'^(t+u+(l+i+n|l+e+n|u+n|l+i|u+t|l+e+e|l+e))$', message.content.lower()):
+    elif re.match(r'(tu(un|li|ut|le))', message.content.lower()):
         await message.channel.send("tirsk")
 
 
