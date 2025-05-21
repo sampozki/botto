@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright: sampozki 2020 - 2024
+# Copyright: sampozki 2020 - 2025
 
 import discord
 import asyncio
@@ -84,7 +84,7 @@ async def on_message(message):
     elif "paska botti" in message.content.lower():
         await message.channel.send("Haista vittu!")
 
-    elif re.match(r'^(m+(a+u|i+u|ä+y|ö+y))$', message.content.lower()):
+    elif re.match(r'^(m+(a+u|i+u|ä+y|ö+y|i+a+u|j+ä+y))$', message.content.lower()):
         await mau.mau2(message)
         await setstatus(random.choice(["mau","maumau","määäyyyyy","mäymäymäymäyyy"]))
         print("maumau   " + str(message.author.id))
@@ -105,6 +105,9 @@ async def on_message(message):
         for a in range(0,4):
             link += str(random.randint(0,9))
         await message.channel.send(link)
+
+    elif re.match(r'(tu(un|li|ut|le))', message.content.lower()):
+        await message.channel.send("tirsk")
 
 
 token = os.getenv("TOKEN")
