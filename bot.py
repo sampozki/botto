@@ -8,6 +8,7 @@ import json
 import urllib3
 import re
 import string
+import os
 
 import simpsonface
 import mau
@@ -106,4 +107,5 @@ async def on_message(message):
         await message.channel.send(link)
 
 
-client.run(open("env.cfg", "r").read())
+token = os.getenv("TOKEN")
+client.run(token)
