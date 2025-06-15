@@ -109,6 +109,9 @@ async def on_message(message):
     elif re.match(r'(tu(un|li|ut|le))', message.content.lower()):
         await message.channel.send("tirsk")
 
+    elif re.match(r'^\!ping$', message.content.lower()):
+        await message.channel.send("pong")
+
 
 token = os.getenv("TOKEN")
 client.run(token)
