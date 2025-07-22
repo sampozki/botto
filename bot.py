@@ -84,7 +84,7 @@ async def on_message(message):
     elif "paska botti" in message.content.lower():
         await message.channel.send("Haista vittu!")
 
-    elif re.match(r'^(m+(a+u|i+u|ä+y|ö+y|i+a+u|j+ä+y))$', message.content.lower()):
+    elif re.match(r'^(m+(a+u|o+u|i+u|ä+y|ö+y|i+a+u|j+ä+y))$', message.content.lower()):
         await mau.mau2(message)
         await setstatus(random.choice(["mau","maumau","määäyyyyy","mäymäymäymäyyy"]))
         print("maumau   " + str(message.author.id))
