@@ -13,4 +13,4 @@ RUN pip install -r requirements.txt
 
 COPY *.py ./
 
-CMD ["python3.8", "bot.py"]
+CMD ["python3.9", "bot.py"]
